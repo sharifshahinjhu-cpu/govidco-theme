@@ -1,0 +1,64 @@
+/*
+Theme Name: GoVidCo Crimson Flux
+Theme URI: https://govidco.com/ 
+Author: Your Name / GoVidCo Team
+Author URI: https://govidco.com/
+Description: A modern, high-impact, neon-red and black theme developed for GoVidCo, prioritizing visual engagement and WCAG AA accessibility standards. Based on the Crimson Flux Design System.
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: custom-background, custom-colors, custom-header, full-width-template, theme-options, translation-ready, dark, black, neon, futuristic
+Text Domain: govidco
+*/
+
+/*
+--------------------------------------------------------------------------------
+NOTE: ALL CUSTOM CSS STYLES (Neon colors, glow effects, Tailwind utilities) 
+ARE CURRENTLY EMBEDDED IN HEADER.PHP FOR INITIAL DESIGN INTEGRITY.
+This file serves as the mandatory Theme Metadata file for WordPress recognition.
+--------------------------------------------------------------------------------
+*/
+
+/* === CRIMSON MATRIX: GLOBAL FIXED BACKGROUND STYLE === */
+:root {
+    --matrix-color: rgba(255, 0, 80, 0.04); /* Low-opacity Neon Red/Hot Pink */
+    --grid-unit: 48px; /* Density of the grid lines */
+    --animation-speed: 80s linear infinite; /* Slow, continuous flow */
+}
+
+/* Base style for the fixed background layer */
+.crimson-matrix {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -4; /* Must be behind all content and Holo-Plates */
+    background-color: #000000; /* Pure black base */
+    
+    /* CSS Gradient Pattern (Repeating Linear Grid Texture) */
+    background-image: 
+        /* Vertical Lines */
+        repeating-linear-gradient(0deg, var(--matrix-color) 0, var(--matrix-color) 1px, transparent 1px, transparent var(--grid-unit)), 
+        /* Horizontal Lines */
+        repeating-linear-gradient(-90deg, var(--matrix-color) 0, var(--matrix-color) 1px, transparent 1px, transparent var(--grid-unit));
+    
+    background-size: var(--grid-unit) var(--grid-unit);
+    
+    /* Apply slow, subtle animation for the algorithmic flow effect */
+    animation: matrix-flow var(--animation-speed);
+}
+
+/* Define the animation keyframes for the subtle flow */
+@keyframes matrix-flow {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: var(--grid-unit) var(--grid-unit);
+    }
+}
+/* Emergency Preloader Fix */
+#preloader {
+    display: none !important;
+}
