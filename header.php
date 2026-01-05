@@ -42,7 +42,7 @@
     <style>
         /* Custom Utilities */
         body {
-            background-color: #020408; /* Deep Dark */
+            background-color: #020408; /* Deep Dark System Theme */
             color: #a1a1aa; /* text-zinc-400 */
         }
         
@@ -51,7 +51,7 @@
             background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
         }
 
-        /* Form Autofill Styling */
+        /* Form Autofill Styling Override */
         input:-webkit-autofill,
         input:-webkit-autofill:hover, 
         input:-webkit-autofill:focus, 
@@ -87,10 +87,10 @@
             
             <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="block group">
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/GoVidCo_Primary_Logo_White.png" 
-                     alt="GoVidCo" 
-                     class="h-10 w-auto object-contain transition-opacity group-hover:opacity-80"
-                     width="200" 
-                     height="60">
+                     alt="GoVidCo Logo" 
+                     class="h-12 w-auto object-contain transition-opacity group-hover:opacity-80"
+                     width="240" 
+                     height="70">
             </a>
             
             <div class="hidden xl:flex items-center gap-8">
